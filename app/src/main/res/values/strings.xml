@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">ShoeStore</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="sign_in">Sign in</string>
+    <string name="welcome">WELCOME</string>
+    <string name="welcome_text">HALLO\n\nI am Abdallah Yasser.\nI am student at Fayoum faculty of Engineering. I am very happy because I am here with you in this course. I want to thank you for this and thanks to all stuff in Udacity.\n\nWelcome to yuo in my Shoe Store Inventory App</string>
+    <string name="next">NEXT</string>
+    <string name="instruction">Instrustions</string>
+    <string name="instruction_text">1-First Instruction \n2- second Instruction \n3- Third Instruction \n4- Fourth Instruction\n5- Fifth Instruction\n6- Sixth Instruction\n7- Seventh Instruction\n8- Eighth Instruction\n9- Ninth Instruction\n10- That\'s enough</string>
+    <string name="shoe_detail">Shoe Detail</string>
+    <string name="name">Name</string>
+    <string name="company">Company</string>
+    <string name="shoe_size">Shoe Size</string>
+    <string name="description">Description</string>
+    <string name="save_details">Save Details</string>
+    <string name="logout">Logout</string>
+    <string name="_45_0">45.0</string>
+</resources>

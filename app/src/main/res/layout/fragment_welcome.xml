@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".screens.welcome.WelcomeFragment">
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!-- I used linear layout because the design of this fragment is very simple for use constraint layout-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/welcomeTextView"
+            style="@style/TitleStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/welcome"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/welcomTextTextView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/meduim_margin"
+            android:layout_marginTop="@dimen/large_margin"
+            android:layout_marginEnd="@dimen/meduim_margin"
+            android:layout_weight="1"
+            android:fontFamily="@font/alata"
+            android:text="@string/welcome_text"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/welcomeNextButton"
+            style="@style/button_default_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/next" />
+    </LinearLayout>
+</FrameLayout></layout>

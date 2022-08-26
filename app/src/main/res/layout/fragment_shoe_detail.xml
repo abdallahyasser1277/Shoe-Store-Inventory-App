@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".screens.shoeDetail.ShoeDetailFragment"
+    tools:ignore="LabelFor" >
+    <data>
+        <variable
+            name="shoeTemp"
+            type="com.udacity.shoestore.models.Shoe" />
+        <variable
+            name="viewModel"
+            type="com.udacity.shoestore.MainViewModel" />
+    </data>
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- I used constaint layout because the design is complex for using linear layout  -->
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textViewName"
+            android:layout_width="71dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/small_margin"
+            android:text="@string/name"
+            android:textAlignment="viewStart"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/editTextName" />
+
+        <EditText
+            android:id="@+id/editTextName"
+            style="@style/detail_style"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:text="@={shoeTemp.name}"
+            app:layout_constraintBottom_toTopOf="@+id/editTextCompany"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textViewName"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="DuplicateSpeakableTextCheck,SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/textViewCompany"
+            android:layout_width="71dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/small_margin"
+            android:text="@string/company"
+            android:textAlignment="viewStart"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextCompany"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/editTextCompany" />
+
+        <EditText
+            android:id="@+id/editTextCompany"
+            style="@style/detail_style"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:text="@={shoeTemp.company}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textViewCompany"
+            app:layout_constraintTop_toBottomOf="@+id/editTextName"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck,DuplicateSpeakableTextCheck" />
+
+        <TextView
+            android:id="@+id/textViewSize"
+            android:layout_width="71dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/small_margin"
+            android:text="@string/shoe_size"
+            android:textAlignment="viewStart"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextSize"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/editTextSize" />
+
+        <EditText
+            android:id="@+id/editTextSize"
+            style="@style/detail_style"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:text="@={``+shoeTemp.size}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textViewSize"
+            app:layout_constraintTop_toBottomOf="@+id/editTextCompany"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/textViewDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/small_margin"
+            android:text="@string/description"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextDescription"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/editTextDescription" />
+
+        <EditText
+            android:id="@+id/editTextDescription"
+            style="@style/detail_style"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:text="@={shoeTemp.description}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textViewDescription"
+            app:layout_constraintTop_toBottomOf="@+id/editTextSize"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+
+        <Button
+            android:id="@+id/saveDetailsButton"
+            style="@style/button_default_style"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/save_details"
+            android:onClick="@{() -> viewModel.eventSaveButtonClicked()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/cancelButton"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="TextContrastCheck" />
+
+        <Button
+            android:id="@+id/cancelButton"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="@dimen/small_margin"
+            android:layout_marginBottom="@dimen/small_margin"
+            android:text="@android:string/cancel"
+            android:textColor="@android:color/holo_red_dark"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/saveDetailsButton" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout></layout>
